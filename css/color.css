@@ -27,3 +27,36 @@ footer{
     text-align: center;
     margin-top: 30px;
 }
+
+.innerColorContainer {
+    height: 300px;
+    border-radius: 10px;
+}
+
+.colorNameContainer {
+    line-height: 300px;
+    text-align: center;
+    font-weight: 900;
+    margin: 0;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.yearReleaseContainer {
+    font-weight: 300;
+    font-style: italic;
+    color: #808080;
+    margin-bottom: 8px;
+}
+
+
+.hexCodeContainer {
+    font-weight: 600;
+    font-size:20px;
+    margin:0; 
+}
+
+.pantoneContainer {
+    font-weight: 500;
+    margin-top: 8px;    
+}
