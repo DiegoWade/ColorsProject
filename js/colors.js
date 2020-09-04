@@ -18,7 +18,7 @@ function include(filename, onload) {
     head.appendChild(script);
 }
 
-include('http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js', function () {
+include('https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js', function () {
     $(document).ready(function () {
         //alert('the DOM is ready');
         loadPage(1);
