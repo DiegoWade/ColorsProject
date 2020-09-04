@@ -1,3 +1,5 @@
+let data;
+
 function include(filename, onload) {
     var head = document.getElementsByTagName('head')[0];
     var script = document.createElement('script');
@@ -16,8 +18,6 @@ function include(filename, onload) {
     head.appendChild(script);
 }
 
-
-
 include('http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js', function () {
     $(document).ready(function () {
         //alert('the DOM is ready');
@@ -33,7 +33,6 @@ include('http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js', funct
         });
     });
 });
-
 
 function loadPage(page) {
     
@@ -100,4 +99,31 @@ function buildGridCard(data) {
     //Append nameContainer to card
     card.appendChild(pantoneContainer);
     return card;
+}
+
+function copyToClipBoard(e) {
+    var $temp = $("<textarea>");
+    var brRegex = /<br\s*[\/]?>/gi;
+    $("body").append($temp);
+
+    let cardNodeChilds;
+    let releaseYear;
+    let hexCode;
+    let pantone;
+    let toBeCopied;
+
+    if (e.explicitOriginalTarget) {
+        cardNodeChilds = e.explicitOriginalTarget.parentElement.parentElement.childNodes;
+    } else {
+        cardNodeChilds = e.path[2].childNodes;
+    }
+
+    name = cardNodeChilds[0].textContent;
+    releaseYear = cardNodeChilds[1].innerHTML;
+    hexCode = cardNodeChilds[2].innerHTML;
+    pantone = cardNodeChilds[3].innerHTML;
+    toBeCopied = name + "<br>" + releaseYear + "<br>" + hexCode + "<br>" + pantone;
+    $temp.val(toBeCopied.replace(brRegex, "\r\n")).select();
+    document.execCommand("copy");
+    $temp.remove();    
 }

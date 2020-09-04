@@ -17,6 +17,15 @@ body {
     flex-wrap: wrap;
 }
 
+.cardContainer {
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #F0F3F9;
+    box-shadow: -7px -7px 12px 0px rgba(255, 255, 255, 1), 7px 7px 12px 0px rgba(68, 86, 161, 0.1);
+    margin-bottom: 5%;
+}
+
 .flexBetween {
     display: flex;
     flex-flow: row;
@@ -59,4 +68,40 @@ footer{
 .pantoneContainer {
     font-weight: 500;
     margin-top: 8px;    
+}
+
+.pantoneContainer,.hexCodeContainer {
+    color: #333;
+}
+
+.arrowNav{
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    background-color: #F0F3F9;
+    box-shadow: -7px -7px 12px 0px rgba(255, 255, 255, 1), 7px 7px 12px 0px rgba(68, 86, 161, 0.1);
+    font-weight: 900;
+    font-size: 20px;
+    border: none;
+}
+
+.spaceButtons{
+    margin-right: 20px;
+}
+
+
+@media (min-width: 500px){
+    #colors-container{
+       justify-content: space-around;
+    }
+
+    .cardContainer {
+        width: 41%;       
+    }
+}
+
+@media  (min-width: 834px){
+    .cardContainer {
+        width: 25%;       
+    }
 }
