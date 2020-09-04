@@ -15,6 +15,8 @@ Colors is build with the following technologies
 You can acces Colors clicking the following link:
 
 * [Colors] - by Diego Wade
+  - Click right arrow to navigate to 2nd page
+  - Click left arrow to navigate to 1st page
+  - Click on any color card to copy all the information of that color to your clipboard
 
-
-[Colors]: <http://tobeChangeColorsLink.com>
+[Colors]: <https://diegowade.github.io/ColorsProject.github.io>
