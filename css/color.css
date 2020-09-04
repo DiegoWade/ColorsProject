@@ -1,6 +1,24 @@
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #F0F3F9;
+} 
+
+
+
+.arrowNav{
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    background-color: #F0F3F9;
+    box-shadow: -7px -7px 12px 0px rgba(255, 255, 255, 1), 7px 7px 12px 0px rgba(68, 86, 161, 0.1);
+    font-weight: 900;
+    font-size: 20px;
+    border: none;
+}
+
+.spaceButtons{
+    margin-right: 20px;
+
 }
 
 .colorsHeader {
@@ -24,17 +42,6 @@ body {
     background-color: #F0F3F9;
     box-shadow: -7px -7px 12px 0px rgba(255, 255, 255, 1), 7px 7px 12px 0px rgba(68, 86, 161, 0.1);
     margin-bottom: 5%;
-}
-
-.flexBetween {
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-}
-
-footer{
-    text-align: center;
-    margin-top: 30px;
 }
 
 .innerColorContainer {
@@ -71,26 +78,14 @@ footer{
 }
 
 .pantoneContainer,.hexCodeContainer {
-    color: #333;
+color: #333;
 }
 
-.arrowNav{
-    height: 40px;
-    width: 40px;
-    border-radius: 10px;
-    background-color: #F0F3F9;
-    box-shadow: -7px -7px 12px 0px rgba(255, 255, 255, 1), 7px 7px 12px 0px rgba(68, 86, 161, 0.1);
-    font-weight: 900;
-    font-size: 20px;
-    border: none;
-}
 
-.spaceButtons{
-    margin-right: 20px;
-}
-
-.completeAnimation{
-    width: 100%;
+.flexBetween {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
 }
 
 
@@ -109,3 +104,14 @@ footer{
         width: 25%;       
     }
 }
+
+
+.completeAnimation{
+    width: 100%;
+}
+
+footer{
+text-align: center;
+margin-top: 30px;
+}
+
