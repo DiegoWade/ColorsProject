@@ -110,6 +110,10 @@ color: #333;
     width: 100%;
 }
 
+.unabletoClick{
+    pointer-events: none;
+}
+
 footer{
 text-align: center;
 margin-top: 30px;

@@ -111,11 +111,25 @@ function copyToClipBoard(e) {
     let hexCode;
     let pantone;
     let toBeCopied;
+    let cardContainers;
 
     if (e.explicitOriginalTarget) {
         cardNodeChilds = e.explicitOriginalTarget.parentElement.parentElement.childNodes;
+        cardContainers = e.explicitOriginalTarget.parentElement.parentElement.parentElement.childNodes;       
+        cardContainers.forEach(container  =>{       
+            if(e.explicitOriginalTarget.parentElement.parentElement.id!= container.id){  
+                container.classList.add("unabletoClick");
+            }
+        });
+
     } else {
         cardNodeChilds = e.path[2].childNodes;
+        cardContainers = e.path[3].childNodes;
+        cardContainers.forEach(container  =>{       
+            if(e.path[2].id != container.id){  
+                container.classList.add("unabletoClick");
+            }
+        });
     }
 
     name = cardNodeChilds[0].textContent;
@@ -126,31 +140,37 @@ function copyToClipBoard(e) {
     $temp.val(toBeCopied.replace(brRegex, "\r\n")).select();
     document.execCommand("copy");
     $temp.remove(); 
-    copiedAnimation(e);   
+    copiedAnimation(e);    
 }
 
 function copiedAnimation(e) {
 
     let cardContainer;
+    let cardContainers;
 
     if (e.explicitOriginalTarget) {
         cardContainer = e.explicitOriginalTarget.parentElement.parentElement;
+        cardContainers = e.explicitOriginalTarget.parentElement.parentElement.parentElement.childNodes;  
     } else {
         cardContainer = e.path[2];
+        cardContainers = e.path[3].childNodes;
     }
 
-
     originalText = cardContainer.childNodes[0].childNodes[0].innerHTML;
-    copiedText = "¡Copied to clipboard!";
 
+    copiedText = "¡Copied to clipboard!";
 
     cardContainer.childNodes[0].childNodes[0].innerHTML = copiedText;
     cardContainer.classList.add("completeAnimation");
-
 
     setTimeout(() => {
         cardContainer.classList.remove("completeAnimation");
         cardContainer.childNodes[0].childNodes[0].innerHTML = originalText;
 
+        cardContainers.forEach(container  =>{ 
+            if(container.classList.contains("unabletoClick")){             
+                container.classList.remove("unabletoClick");                
+            }           
+        });
     }, 2000);
 }
