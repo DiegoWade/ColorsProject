@@ -125,5 +125,32 @@ function copyToClipBoard(e) {
     toBeCopied = name + "<br>" + releaseYear + "<br>" + hexCode + "<br>" + pantone;
     $temp.val(toBeCopied.replace(brRegex, "\r\n")).select();
     document.execCommand("copy");
-    $temp.remove();    
+    $temp.remove(); 
+    copiedAnimation(e);   
+}
+
+function copiedAnimation(e) {
+
+    let cardContainer;
+
+    if (e.explicitOriginalTarget) {
+        cardContainer = e.explicitOriginalTarget.parentElement.parentElement;
+    } else {
+        cardContainer = e.path[2];
+    }
+
+
+    originalText = cardContainer.childNodes[0].childNodes[0].innerHTML;
+    copiedText = "¡Copied to clipboard!";
+
+
+    cardContainer.childNodes[0].childNodes[0].innerHTML = copiedText;
+    cardContainer.classList.add("completeAnimation");
+
+
+    setTimeout(() => {
+        cardContainer.classList.remove("completeAnimation");
+        cardContainer.childNodes[0].childNodes[0].innerHTML = originalText;
+
+    }, 2000);
 }

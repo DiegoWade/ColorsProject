@@ -89,6 +89,10 @@ footer{
     margin-right: 20px;
 }
 
+.completeAnimation{
+    width: 100%;
+}
+
 
 @media (min-width: 500px){
     #colors-container{
