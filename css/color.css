@@ -14,6 +14,7 @@ body {
     font-weight: 900;
     font-size: 20px;
     border: none;
+    cursor: pointer;
 }
 
 .spaceButtons{
